@@ -16,3 +16,8 @@ endif
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.stagefright.omx_default_rank.sw-audio=16
+
+# Pasr
+PRODUCT_PRODUCT_PROPERTIES += \
+    vendor.power.pasr.enabled=true
+
