@@ -32,8 +32,14 @@ import android.os.IBinder;
 import android.os.UserHandle;
 import android.util.Log;
 
+<<<<<<< HEAD
 import org.lineageos.internal.util.FileUtils;
 
+=======
+import java.util.List;
+
+import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
+>>>>>>> ccff8f8... AOSiP-ify
 import vendor.xiaomi.hardware.motor.V1_0.IMotor;
 
 public class PopupCameraService extends Service {
@@ -123,11 +129,40 @@ public class PopupCameraService extends Service {
 
     private void registerReceiver() {
         IntentFilter filter = new IntentFilter();
+<<<<<<< HEAD
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(lineageos.content.Intent.ACTION_CAMERA_STATUS_CHANGED);
         registerReceiver(mIntentReceiver, filter);
     }
 
+=======
+        filter.addAction("android.intent.action.ACTION_SHUTDOWN");
+        filter.addAction("android.intent.action.SCREEN_ON");
+        filter.addAction("android.intent.action.SCREEN_OFF");
+        filter.addAction("android.intent.action.CAMERA_STATUS_CHANGED");
+        filter.addAction("android.intent.action.ACTIVE_PACKAGE_CHANGED");
+        this.registerReceiver(mIntentReceiver, filter);
+    }
+
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            final String action = intent.getAction();
+            if (android.content.Intent.ACTION_CAMERA_STATUS_CHANGED.equals(action)) {
+               mCameraState = intent.getExtras().getString(android.content.Intent.EXTRA_CAMERA_STATE);
+               updateMotor(mCameraState);
+            } else if (Intent.ACTION_SCREEN_ON.equals(action)) {
+                try {
+                    IDisplayFeature mDisplayFeature = IDisplayFeature.getService();
+                    mDisplayFeature.setFeature(0, 0, 2, 255);
+                    mDisplayFeature.setFeature(0, 3, 0, 255);
+                } catch(Exception e) {
+                }
+            }
+        }
+    };
+
+>>>>>>> ccff8f8... AOSiP-ify
     private void updateMotor(String cameraState) {
         if (mMotor == null) return;
         try {
