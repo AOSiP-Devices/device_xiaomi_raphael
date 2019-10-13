@@ -100,6 +100,7 @@ void vendor_load_properties() {
     property_override("persist.bluetooth.bluetooth_audio_hal.disabled", "true");
     property_override("persist.vendor.qcom.bluetooth.enable.splita2dp", "false");
     property_override("vendor.audio.feature.a2dp_offload.enable", "false");
+    property_override("ro.control_privapp_permissions", "log");
     load_dalvikvm_properties();
 
 }
