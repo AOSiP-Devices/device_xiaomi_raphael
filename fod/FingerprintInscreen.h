@@ -43,7 +43,7 @@ public:
     Return<int32_t> getSize() override;
     Return<void> onStartEnroll() override;
     Return<void> onFinishEnroll() override;
-    Return<void> onPress() override;
+    Return<void> onPress(int32_t isAod) override;
     Return<void> onRelease() override;
     Return<void> onShowFODView() override;
     Return<void> onHideFODView() override;
@@ -57,6 +57,7 @@ public:
 private:
     sp<IDisplayFeature> xiaomiDisplayFeatureService;
     sp<IXiaomiFingerprint> xiaomiFingerprintService;
+    int32_t aod;
 };
 
 }  // namespace implementation
