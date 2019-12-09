@@ -1,6 +1,3 @@
-on boot
-    write /sys/class/thermal/thermal_message/sconfig 10
-
 on post-fs
     mount none /system/etc/goodix/BMatrix.so /mnt/vendor/persist/goodix/BMatrix.so bind
     mount none /system/etc/goodix/caliParamsInfo.so /mnt/vendor/persist/goodix/caliParamsInfo.so bind
