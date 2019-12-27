@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9796f14d_888a77c9",
+        "filename": "AndroidProducts.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-12-27T19:35:08Z",
+      "side": 1,
+      "message": "You can let the license be as it was, and remove the COMMON_LUNCH_CHOICES for now",
+      "revId": "50c2be9fbfa17092f9f72c5e34d42eb47b75816c",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
