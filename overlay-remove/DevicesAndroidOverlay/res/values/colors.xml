@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- A bright Android-y green -->
+    <color name="legacy_green">#ff90df25</color>
+
+    <!-- A bright orange suitable for use in the early 2000s -->
+    <color name="legacy_orange">#fffea50b</color>
+</resources>
