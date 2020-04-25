@@ -2,5 +2,9 @@
   {
     "repository" : "proprietary_vendor_xiaomi",
     "target_path": "vendor/xiaomi"
+  },
+  {
+    "repository": "kernel_xiaomi_raphael",
+    "target_path": "kernel/xiaomi/raphael"
   }
 ]
