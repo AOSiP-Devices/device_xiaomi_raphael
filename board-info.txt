@@ -1,0 +1,6 @@
+require version-tz=TZ.XF.5.2.C1-00008
+require version-in=IN,IN,12345,V11.0.4.0.QFKINXM
+require version-eea=EEA,EU,12345,V11.0.6.0.QFKEUXM
+require version-cn=CHINA,CN,12345,V11.0.8.0.QFKCNXM
+require version-global=GLOBAL,MI,12345,V11.0.4.0.QFKMIXM
+require version-ru=RUSSIA,RU,12345,V11.0.2.0.QFKRUXM
