@@ -21,3 +21,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.stagefright.omx_default_rank.sw-audio=16 \
     persist.vendor.audio.fluence.voicerec=true
+
+# Seamless transfer
+PRODUCT_PRODUCT_PROPERTIES += \
+    sys.fflag.override.settings_seamless_transfer=true
