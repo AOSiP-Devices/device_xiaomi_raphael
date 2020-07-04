@@ -18,6 +18,9 @@
 
 #define DIM_ALPHA_PATH "sys/class/drm/card0-DSI-1/dim_alpha"
 #define MAXIMUM_DISPLAY_BRIGHTNESS 2047
+#define MINIMUM_DISPLAY_BRIGHTNESS 1
+#define MAXIMUM_DISPLAY_SCALED_BRIGHTNESS 255
+#define MINIMUM_DISPLAY_SCALED_BRIGHTNESS 1
 
 #include <log/log.h>
 
@@ -77,7 +80,8 @@ Return<Status> Light::setLight(Type type, const LightState& state)  {
 
     // Scale display brightness.
     if (type == Type::BACKLIGHT) {
-        legacyState.color = (state.color & 0xFF) * MAXIMUM_DISPLAY_BRIGHTNESS / 0xFF;
+        legacyState.color = (MAXIMUM_DISPLAY_BRIGHTNESS - MINIMUM_DISPLAY_BRIGHTNESS) * ((state.color & 0xFF) - 1) / (MAXIMUM_DISPLAY_SCALED_BRIGHTNESS - MINIMUM_DISPLAY_SCALED_BRIGHTNESS) + 1;
+        if (legacyState.color == 1) legacyState.color = 4;
         float alpha = 1.0 - pow(legacyState.color / 2047.0 * 430.0 / 600.0, 0.455);
         int dim_alpha = alpha * 255;
         set(DIM_ALPHA_PATH, dim_alpha);
