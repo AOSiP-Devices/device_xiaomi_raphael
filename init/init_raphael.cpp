@@ -96,6 +96,8 @@ void vendor_load_properties() {
     }
 
     property_override("ro.control_privapp_permissions", "log");
+    property_override("ro.apex.updatable", "true");
+
     load_dalvikvm_properties();
 
 }
