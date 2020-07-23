@@ -22,6 +22,8 @@
 
 #include "property_service.h"
 #include "vendor_init.h"
+namespace android {
+namespace init {
 
 using android::init::property_set;
 
@@ -39,24 +41,21 @@ void load_raphaelglobal() {
     property_override("ro.product.model", "Mi 9T Pro");
     property_override("ro.build.product", "raphael");
     property_override("ro.product.device", "raphael");
-    property_override("ro.build.description", "raphael-user 9 PKQ1.181121.001 V10.3.1.0.PFKEUXM release-keys");
-    property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
+    property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V12.0.1.0.QFKMIXM release-keys");
 }
 
 void load_raphaelin() {
     property_override("ro.product.model", "Redmi K20 Pro");
     property_override("ro.build.product", "raphaelin");
     property_override("ro.product.device", "raphaelin");
-    property_override("ro.build.description", "raphaelin-user 9 PKQ1.181121.001 V10.3.3.0.PFKINXM release-keys");
-    property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
+    property_override("ro.build.description", "raphaelin-user 10 QKQ1.190825.002 V12.0.2.0.QFKINXM release-keys");
 }
 
 void load_raphael() {
     property_override("ro.product.model", "Redmi K20 Pro");
     property_override("ro.build.product", "raphael");
     property_override("ro.product.device", "raphael");
-    property_override("ro.build.description", "raphael-user 9 PKQ1.181121.001 V10.3.12.0.PFKCNXM release-keys");
-    property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
+    property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V12.0.2.0.QFKCNXM release-keys");
 }
 
 
@@ -67,19 +66,19 @@ void load_dalvikvm_properties()
     sysinfo(&sys);
     if (sys.totalram < 7000ull * 1024 * 1024) {
         // 4/6GB RAM
-        property_set("dalvik.vm.heapstartsize", "16m");
-        property_set("dalvik.vm.heaptargetutilization", "0.5");
-        property_set("dalvik.vm.heapmaxfree", "32m");
+        property_override("dalvik.vm.heapstartsize", "16m");
+        property_override("dalvik.vm.heaptargetutilization", "0.5");
+        property_override("dalvik.vm.heapmaxfree", "32m");
     } else {
         // 8/12/16GB RAM
-        property_set("dalvik.vm.heapstartsize", "24m");
-        property_set("dalvik.vm.heaptargetutilization", "0.46");
-        property_set("dalvik.vm.heapmaxfree", "48m");
+        property_override("dalvik.vm.heapstartsize", "24m");
+        property_override("dalvik.vm.heaptargetutilization", "0.46");
+        property_override("dalvik.vm.heapmaxfree", "48m");
     }
 
-    property_set("dalvik.vm.heapgrowthlimit", "256m");
-    property_set("dalvik.vm.heapsize", "512m");
-    property_set("dalvik.vm.heapminfree", "8m");
+    property_override("dalvik.vm.heapgrowthlimit", "256m");
+    property_override("dalvik.vm.heapsize", "512m");
+    property_override("dalvik.vm.heapminfree", "8m");
 }
 
 void vendor_load_properties() {
@@ -97,7 +96,13 @@ void vendor_load_properties() {
 
     property_override("ro.control_privapp_permissions", "log");
     property_override("ro.apex.updatable", "true");
-
+    property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
+    property_override("ro.system.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
+    property_override("ro.bootimage.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
+    property_override("ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
     load_dalvikvm_properties();
 
 }
+
+}  // namespace init
+}  // namespace android
