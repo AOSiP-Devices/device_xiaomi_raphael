@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c66a0700_c874351a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000314
+      },
+      "writtenOn": "2021-05-20T02:42:46Z",
+      "side": 1,
+      "message": "we don\u0027t use qti usb hal since \u003c4.19, what would setting this flag achieve",
+      "revId": "71183d634e611e9ee3e8d1cfe2ccce8d5460b12a",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
