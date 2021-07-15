@@ -16,6 +16,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.sat.fallback.lux.d=50 \
     persist.vendor.camera.enableNCSService=TRUE \
     persist.vendor.camera.enableTOFInterface=TRUE \
+    persist.vendor.camera.privapp.list=com.android.camera \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
 # CNE and DPM
@@ -113,3 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USAP
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.device_config.runtime_native.usap_pool_enabled=true
+
+# whitelisted cams
+PRODUCT_PROPERTY_OVERRIDES += \
+
